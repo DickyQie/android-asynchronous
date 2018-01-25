@@ -93,21 +93,6 @@ private final String IMGURL= "http://img0.pconline.com.cn/pconline
 <p><span style="color:#B22222"><strong>一个ImageView控件和一个Button控件，当点击Button控件时，弹出一个ProgressDialog，然后开启一个异步任务，从网络中下载一张图片，并更新到我们的ImageView上。这里还要注意一点，如果我们要访问网络，必须还要给其授权才行</strong></span></p> 
 <p>AndroidManifest.xml文件：</p> 
 <pre><code class="language-html">&lt;uses-permission android:name="android.permission.INTERNET"/&gt;
-    &lt;application
-        android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-         &gt;
-        &lt;activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"&gt;
-            &lt;intent-filter&gt;
-                &lt;action android:name="android.intent.action.MAIN" /&gt;
- 
-                &lt;category android:name="android.intent.category.LAUNCHER" /&gt;
-            &lt;/intent-filter&gt;
-        &lt;/activity&gt;
- &lt;/application&gt;</code></pre> 
 <p>效果图：</p> 
 <p><img alt="" height="353" src="http://images2015.cnblogs.com/blog/1041439/201611/1041439-20161116092011779-996504030.png" width="423">&nbsp;<img alt="" height="372" src="http://images2015.cnblogs.com/blog/1041439/201611/1041439-20161116092027467-1655478763.png" width="327"></p> 
 
