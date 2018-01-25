@@ -12,34 +12,7 @@
 </ul> 
 <p>一个超简单的理解 AsyncTask 的例子：<strong>AsyncTask来从网络上下载一张图片</strong></p> 
 <p>Activity代码：</p> 
-<pre><code class="language-java">private Button btn;
-private ImageViewimageView;
-privateProgressDialog progressDialog;
-private final String IMGURL= "http://img0.pconline.com.cn/pconline
-/1206/18/2829090_3867bd63fd673471aa184c02_500.jpg";
-    @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.asynctask_img);
-        btn=(Button)findViewById(R.id.buttonOnClicksAsyncTask);
-        imageView =(ImageView)findViewById(R.id.imageViewss);
-        progressDialog = newProgressDialog(this);
-        progressDialog.setTitle("提示信息");
-        progressDialog.setMessage("正在下载中，请稍后......");
-        progressDialog.setCancelable(false);
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        btn.setOnClickListener(newView.OnClickListener()
-        {
-            @Override
-            public voidonClick(View v)
-            {
-            // 在UI Thread当中实例化AsyncTask对象，并调用execute方法
-                newMAsyncTask().execute(IMGURL);
-            }
-        });
-    }
-
+<pre><code class="language-java">
  public class MAsyncTask extends AsyncTask&lt;String, Integer, byte[]&gt;
     {
         @Override
@@ -88,7 +61,6 @@ private final String IMGURL= "http://img0.pconline.com.cn/pconline
             imageView.setImageBitmap(bitmap);
             progressDialog.dismiss();
         }
-    }
 }</code></pre> 
 <p><span style="color:#B22222"><strong>一个ImageView控件和一个Button控件，当点击Button控件时，弹出一个ProgressDialog，然后开启一个异步任务，从网络中下载一张图片，并更新到我们的ImageView上。这里还要注意一点，如果我们要访问网络，必须还要给其授权才行</strong></span></p> 
 <p>AndroidManifest.xml文件：</p> 
