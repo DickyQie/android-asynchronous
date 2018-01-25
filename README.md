@@ -1,6 +1,6 @@
 # AsyncTask用法和异步加载图片
 
- <p>AsyncTask：是<a href="http://lib.csdn.net/base/15" target="_blank" rel="nofollow">Android</a>提供的轻量级的异步类,可以直接继承AsyncTask,在类中实现异步操作,并提供接口反馈当前异步执行的程度(可以通过接口实现UI进度更新),最后反馈执行的结果给UI主线程。</p> 
+ <p>AsyncTask：是Android提供的轻量级的异步类,可以直接继承AsyncTask,在类中实现异步操作,并提供接口反馈当前异步执行的程度(可以通过接口实现UI进度更新),最后反馈执行的结果给UI主线程。</p> 
 <p>AsyncTask&nbsp;(异步任务)，从字面上来说，就是在我们的UI主线程运行的时候，异步的完成一些操作。AsyncTask允许我们的执行一个异步的任务在后台。我们可以将耗时的操作放在异步任务当中来执行，并随时将任务执行的结果返回给我们的UI线程来更新我们的UI控件。通过AsyncTask我们可以轻松的解决多线程之间的通信问题。</p> 
 <p>&nbsp;</p> 
 <p>4个步骤：当我们执行一个异步任务的时候，其需要按照下面的4个步骤分别执行</p> 
@@ -11,30 +11,12 @@
  <li>onPostExecute(Result... result):&nbsp;当我们的异步任务执行完之后，就会将结果返回给这个方法，这个方法也是在UI Thread当中调用的，我们可以将返回的结果显示在UI控件上</li> 
 </ul> 
 <p>一个超简单的理解 AsyncTask 的例子：<strong>AsyncTask来从网络上下载一张图片</strong></p> 
-<pre><code class="language-html">&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"&gt;
-    &lt;ImageView
-        android:id="@+id/imageViewss"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:src="@drawable/ic_launcher"
-        android:scaleType="fitCenter"/&gt;
- 
-    &lt;Button
-        android:id="@+id/buttonOnClicksAsyncTask"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
-android:text="从网络上下载一张图片" /&gt;
-&lt;/RelativeLayout&gt;</code></pre> 
 <p>Activity代码：</p> 
 <pre><code class="language-java">private Button btn;
 private ImageViewimageView;
 privateProgressDialog progressDialog;
-private final String IMGURL= "http://img0.pconline.com.cn/pconline/1206/18/2829090_3867bd63fd673471aa184c02_500.jpg";
+private final String IMGURL= "http://img0.pconline.com.cn/pconline
+/1206/18/2829090_3867bd63fd673471aa184c02_500.jpg";
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -128,5 +110,4 @@ private final String IMGURL= "http://img0.pconline.com.cn/pconline/1206/18/28290
  &lt;/application&gt;</code></pre> 
 <p>效果图：</p> 
 <p><img alt="" height="353" src="http://images2015.cnblogs.com/blog/1041439/201611/1041439-20161116092011779-996504030.png" width="423">&nbsp;<img alt="" height="372" src="http://images2015.cnblogs.com/blog/1041439/201611/1041439-20161116092027467-1655478763.png" width="327"></p> 
-<p><strong><span style="color:#B22222">源码下载：</span></strong></p> 
-<p>&nbsp;</p> 
+
