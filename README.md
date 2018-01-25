@@ -10,7 +10,7 @@
  <li>onProgressUpdate(Progess... values):&nbsp;这个方法也是在UI Thread当中执行的，我们在异步任务执行的时候，有时候需要将执行的进度返回给我们的UI界面，例如下载一张网络图片，我们需要时刻显示其下载的进度，就可以使用这个方法来更新我们的进度。这个方法在调用之前，我们需要在 doInBackground 方法中调用一个 publishProgress(Progress) 的方法来将我们的进度时时刻刻传递给 onProgressUpdate 方法来更新</li> 
  <li>onPostExecute(Result... result):&nbsp;当我们的异步任务执行完之后，就会将结果返回给这个方法，这个方法也是在UI Thread当中调用的，我们可以将返回的结果显示在UI控件上</li> 
 </ul> 
-<p>一个超简单的理解 AsyncTask 的例子：<strong>AsyncTask来从网络上下载一张图片</strong></p> 
+<p>一个超简单的理解 AsyncTask 的例子：<strong>AsyncTask来从网络上加载一张图片</strong></p> 
 <p>Activity代码：</p> 
 <pre><code class="language-java">
  public class MAsyncTask extends AsyncTask&lt;String, Integer, byte[]&gt;
